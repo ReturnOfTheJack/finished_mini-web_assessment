@@ -1,0 +1,2 @@
+module JackAppHelper
+end

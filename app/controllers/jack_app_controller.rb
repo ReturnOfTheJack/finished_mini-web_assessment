@@ -1,0 +1,2 @@
+class JackAppController < ApplicationController
+end
