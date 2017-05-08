@@ -23,8 +23,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: j162194
 
 production:
   <<: *default
-  database: mysql2
+  database: j162194
