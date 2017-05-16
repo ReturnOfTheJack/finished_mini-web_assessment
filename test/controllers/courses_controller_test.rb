@@ -6,12 +6,12 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get courses_url
+    get content_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_course_url
+    get new_content_url
     assert_response :success
   end
 

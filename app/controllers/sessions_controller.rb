@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
 
+  # Method that recognises set user when name and password are entered
   def create
   	user = User.find_by(email: params[:session][:email].downcase)
 

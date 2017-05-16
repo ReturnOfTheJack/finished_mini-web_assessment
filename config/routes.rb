@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :contents
   resources :courses
   
-  root to: 'sessions#new'
+  root to: 'sessions#new' # Roots to log in page when user goes to localhost
 
   get 'sessions/new'
 

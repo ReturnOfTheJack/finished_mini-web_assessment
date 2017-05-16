@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ContentsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @content = contents(:one)
+    @content = concern(:one) # COMMENT EVERYTHING HERE
   end
 
   test "should get index" do
@@ -13,36 +13,5 @@ class ContentsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get new_content_url
     assert_response :success
-  end
-
-  test "should create content" do
-    assert_difference('Content.count') do
-      post contents_url, params: { content: { content: @content.content, course_id: @content.course_id, name: @content.name } }
-    end
-
-    assert_redirected_to content_url(Content.last)
-  end
-
-  test "should show content" do
-    get content_url(@content)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_content_url(@content)
-    assert_response :success
-  end
-
-  test "should update content" do
-    patch content_url(@content), params: { content: { content: @content.content, course_id: @content.course_id, name: @content.name } }
-    assert_redirected_to content_url(@content)
-  end
-
-  test "should destroy content" do
-    assert_difference('Content.count', -1) do
-      delete content_url(@content)
-    end
-
-    assert_redirected_to contents_url
   end
 end

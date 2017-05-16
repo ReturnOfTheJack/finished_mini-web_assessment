@@ -8,7 +8,6 @@ class CoursesController < ApplicationController
   end
 
   # GET /courses/1
-  # GET /courses/1.json
   def show
   end
 
@@ -21,43 +20,38 @@ class CoursesController < ApplicationController
   def edit
   end
 
-  # POST /courses
-  # POST /courses.json
+  # Method that creates the course for the table
   def create
-    @course = Course.new(course_params)
-
-    respond_to do |format|
-      if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @course }
-      else
-        format.html { render :new }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+    begin
+      @course = Course.new(course_params)
+      respond_to do |format|
+        if @course.save
+          format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        else
+          format.html { render :new }
+        end
       end
+    rescue
+      puts "Please enter a variable" # Exception handle in case of value error
     end
   end
 
-  # PATCH/PUT /courses/1
-  # PATCH/PUT /courses/1.json
+  # User can update and edit details on a course
   def update
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
-        format.json { render :show, status: :ok, location: @course }
       else
         format.html { render :edit }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /courses/1
-  # DELETE /courses/1.json
+  # Allows a user to delete a course 
   def destroy
     @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

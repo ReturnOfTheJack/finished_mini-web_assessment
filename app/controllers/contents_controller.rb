@@ -21,8 +21,7 @@ class ContentsController < ApplicationController
   def edit
   end
 
-  # POST /contents
-  # POST /contents.json
+  # Method that inserts the information about a unit 
   def create
     @content = Content.new(content_params)
 

@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<% if logged_in? %> <%# If statement that ensures the page is locked from anyone
+                    that is not logged in %>
 <h1>Users</h1>
 
 <table>
@@ -26,6 +28,8 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
+  <br>
+  <%= link_to 'New User', new_user_path %>
+  <% else %>
+    <h1>Please log in</h1>
+  <% end %>

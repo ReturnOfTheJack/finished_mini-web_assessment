@@ -22,9 +22,9 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: j162194
+  adapter: sqlite3
+  database: j162194_testing
 
 production:
   <<: *default
-  database: j162194
+  database: db/production.sqlite3
