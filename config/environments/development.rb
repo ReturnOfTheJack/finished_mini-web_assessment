@@ -52,7 +52,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  #bullet config
+  #bullet config that optimizes performance for site
   config.after_initialize do
     Bullet.enable = true
     Bullet.alert = true
